@@ -1,0 +1,19 @@
+{
+  "valid": { "firstName": "João", "lastName": "Silva", "postalCode": "12345" },
+  "specialCharacters": {
+    "firstName": "!@#$%^&*()",
+    "lastName": "<>?/|\\",
+    "postalCode": "!@#$%"
+  },
+  "numeric": { "firstName": "1234567890", "lastName": "0987654321", "postalCode": "99999" },
+  "long": {
+    "firstName": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "lastName": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    "postalCode": "11111111111111111111111111111111111111111111111111"
+  },
+  "xss": {
+    "firstName": "<script>alert(\"xss\")</script>",
+    "lastName": "\"><img src=x>",
+    "postalCode": "'; DROP TABLE users;--"
+  }
+}
