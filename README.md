@@ -73,3 +73,4 @@ cypress/
 
 - [Plano de Testes](docs/test-plan.md) - escopo, estratégia, ambientes e riscos
 - [Casos de Teste](docs/test-cases.md) - 35 casos de teste documentados com passos e resultados esperados
+- [Bug Reports](docs/bug-reports.md) - 6 defeitos documentados por perfil de usuário
