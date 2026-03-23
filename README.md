@@ -60,6 +60,7 @@ cypress/
 │   └── products.json
 └── support/
     ├── commands.js
+    ├── users.js
     └── e2e.js
 ```
 
@@ -68,6 +69,7 @@ cypress/
 - **Page Objects** centralizam seletores e ações por página, facilitando manutenção
 - **Fixtures** armazenam dados de teste (cenários de checkout, mapeamento produto-imagem)
 - **Custom commands** abstraem fluxos reutilizáveis (login, navegação, checkout)
+- **Constantes centralizadas** (`users.js`) evitam repetição de dados entre os testes
 
 ## Documentação
 

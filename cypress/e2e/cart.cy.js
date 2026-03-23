@@ -1,14 +1,7 @@
 const cartPage = require('../pages/CartPage')
+const { testUsers } = require('../support/users')
 
-const users = [
-  'standard_user',
-  'problem_user',
-  'performance_glitch_user',
-  'error_user',
-  'visual_user',
-]
-
-users.forEach((user) => {
+testUsers.forEach((user) => {
   describe(`Cart - ${user}`, () => {
     beforeEach(() => {
       cy.login(user)
