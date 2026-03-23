@@ -1,3 +1,5 @@
+const nav = require('./NavComponent')
+
 class CartPage {
   get items() {
     return '.cart_item'
@@ -24,11 +26,7 @@ class CartPage {
   }
 
   get cartBadge() {
-    return '.shopping_cart_badge'
-  }
-
-  get cartLink() {
-    return '.shopping_cart_link'
+    return nav.cartBadge
   }
 
   removeItem() {
@@ -44,7 +42,7 @@ class CartPage {
   }
 
   goToCart() {
-    cy.get(this.cartLink).click()
+    nav.goToCart()
   }
 }
 

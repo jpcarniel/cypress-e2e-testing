@@ -12,7 +12,11 @@ Cypress.Commands.add('login', (user) => {
 })
 
 Cypress.Commands.add('addFirstProduct', () => {
-  cy.get(inventoryPage.items).first().find('button').click()
+  cy.get(inventoryPage.items)
+    .first()
+    .then(($item) => {
+      inventoryPage.addToCart($item)
+    })
   inventoryPage.goToCart()
   cy.url().should('include', '/cart')
 })
@@ -34,8 +38,4 @@ Cypress.Commands.add('goToCheckoutComplete', () => {
   cy.goToCheckoutStepTwo()
   checkoutPage.finish()
   cy.url().should('include', '/checkout-complete')
-})
-
-Cypress.Commands.add('fillCheckout', (data) => {
-  checkoutPage.fill(data)
 })

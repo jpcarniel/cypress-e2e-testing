@@ -1,3 +1,5 @@
+const nav = require('./NavComponent')
+
 class InventoryPage {
   get items() {
     return '[data-test="inventory-item"]'
@@ -20,11 +22,7 @@ class InventoryPage {
   }
 
   get cartBadge() {
-    return '.shopping_cart_badge'
-  }
-
-  get cartLink() {
-    return '.shopping_cart_link'
+    return nav.cartBadge
   }
 
   sortBy(option) {
@@ -52,7 +50,7 @@ class InventoryPage {
   }
 
   goToCart() {
-    cy.get(this.cartLink).click()
+    nav.goToCart()
   }
 }
 

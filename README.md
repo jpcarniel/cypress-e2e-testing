@@ -50,6 +50,7 @@ cypress/
 │   ├── cart.cy.js
 │   └── checkout.cy.js
 ├── pages/
+│   ├── NavComponent.js
 │   ├── LoginPage.js
 │   ├── InventoryPage.js
 │   ├── InventoryItemPage.js
@@ -66,7 +67,7 @@ cypress/
 
 ## Arquitetura
 
-- **Page Objects** centralizam seletores e ações por página, facilitando manutenção
+- **Page Objects** centralizam seletores e ações por página, com **Component Objects** para elementos compartilhados (nav/header)
 - **Fixtures** armazenam dados de teste (cenários de checkout, mapeamento produto-imagem)
 - **Custom commands** abstraem fluxos reutilizáveis (login, navegação, checkout)
 - **Constantes centralizadas** (`users.js`) evitam repetição de dados entre os testes

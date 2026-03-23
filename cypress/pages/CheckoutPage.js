@@ -1,3 +1,5 @@
+const nav = require('./NavComponent')
+
 class CheckoutPage {
   // Step One
   get firstNameInput() {
@@ -71,7 +73,7 @@ class CheckoutPage {
   }
 
   get cartBadge() {
-    return '.shopping_cart_badge'
+    return nav.cartBadge
   }
 
   fillForm(firstName, lastName, postalCode) {

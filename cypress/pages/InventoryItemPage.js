@@ -1,3 +1,5 @@
+const nav = require('./NavComponent')
+
 class InventoryItemPage {
   get image() {
     return '.inventory_details_img'
@@ -28,7 +30,7 @@ class InventoryItemPage {
   }
 
   get cartBadge() {
-    return '.shopping_cart_badge'
+    return nav.cartBadge
   }
 
   addToCart() {
