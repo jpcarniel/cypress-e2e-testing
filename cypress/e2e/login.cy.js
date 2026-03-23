@@ -1,5 +1,5 @@
 const loginPage = require('../pages/LoginPage')
-const { loginUsers } = require('../support/users')
+const { loginUsers, PASSWORD } = require('../support/users')
 
 describe('Login', () => {
   beforeEach(() => {
@@ -8,12 +8,14 @@ describe('Login', () => {
 
   loginUsers.forEach(({ username, shouldPass }) => {
     it(`Should login with ${username}`, () => {
-      loginPage.login(username, 'secret_sauce')
+      loginPage.login(username, PASSWORD)
 
       if (shouldPass) {
         cy.url().should('include', '/inventory')
       } else {
-        cy.get(loginPage.errorMessage).should('be.visible')
+        cy.get(loginPage.errorMessage)
+          .should('be.visible')
+          .and('contain', 'locked out')
       }
     })
   })

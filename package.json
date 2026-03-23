@@ -1,22 +1,23 @@
 {
   "name": "meu-projeto-cypress",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "E2E test automation for Sauce Demo using Cypress",
   "scripts": {
     "test": "cypress run --browser chrome",
-    "report:merge": "mochawesome-merge cypress/reports/*.json > cypress/reports/merged.json",
-    "report:generate": "marge cypress/reports/merged.json --reportDir cypress/reports --inline",
-    "report": "npm run report:merge && npm run report:generate",
+    "test:open": "cypress open",
     "test:login": "cypress run --spec cypress/e2e/login.cy.js --browser chrome",
     "test:inventory": "cypress run --spec cypress/e2e/inventory.cy.js --browser chrome",
     "test:inventory-item": "cypress run --spec cypress/e2e/inventory-item.cy.js --browser chrome",
     "test:cart": "cypress run --spec cypress/e2e/cart.cy.js --browser chrome",
     "test:checkout": "cypress run --spec cypress/e2e/checkout.cy.js --browser chrome",
-    "test:open": "cypress open"
+    "report:merge": "mochawesome-merge cypress/reports/*.json > cypress/reports/merged.json",
+    "report:generate": "marge cypress/reports/merged.json --reportDir cypress/reports --inline",
+    "report": "npm run report:merge && npm run report:generate",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [],
-  "author": "",
+  "author": "João Paulo Carniel Fonseca",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {

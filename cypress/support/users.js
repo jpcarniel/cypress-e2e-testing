@@ -1,3 +1,5 @@
+const PASSWORD = 'secret_sauce'
+
 const testUsers = [
   'standard_user',
   'problem_user',
@@ -15,4 +17,4 @@ const loginUsers = [
   { username: 'visual_user', shouldPass: true },
 ]
 
-module.exports = { testUsers, loginUsers }
+module.exports = { testUsers, loginUsers, PASSWORD }

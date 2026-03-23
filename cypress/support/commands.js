@@ -2,12 +2,11 @@ const loginPage = require('../pages/LoginPage')
 const inventoryPage = require('../pages/InventoryPage')
 const cartPage = require('../pages/CartPage')
 const checkoutPage = require('../pages/CheckoutPage')
-
-const DEFAULT_PASSWORD = 'secret_sauce'
+const { PASSWORD } = require('./users')
 
 Cypress.Commands.add('login', (user) => {
   loginPage.visit()
-  loginPage.login(user, DEFAULT_PASSWORD)
+  loginPage.login(user, PASSWORD)
   cy.url().should('include', '/inventory')
 })
 
@@ -29,8 +28,9 @@ Cypress.Commands.add('goToCheckoutStepOne', () => {
 
 Cypress.Commands.add('goToCheckoutStepTwo', () => {
   cy.goToCheckoutStepOne()
-  checkoutPage.fillForm('João', 'Silva', '12345')
-  checkoutPage.submitForm()
+  cy.fixture('checkout').then((data) => {
+    checkoutPage.fill(data.valid)
+  })
   cy.url().should('include', '/checkout-step-two')
 })
 

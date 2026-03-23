@@ -23,6 +23,7 @@ jobs:
       - uses: cypress-io/github-action@v6
         with:
           browser: chrome
+          install: false
 
       - name: Generate report
         if: always()

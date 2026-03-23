@@ -9,7 +9,7 @@ testUsers.forEach((user) => {
 
     it('Should display products with image, name, description and price', () => {
       cy.get(inventoryPage.items).each(($item) => {
-        cy.wrap($item).find('.inventory_item_img').should('be.visible')
+        cy.wrap($item).find(inventoryPage.itemImage).should('be.visible')
         cy.wrap($item).find(inventoryPage.itemNames).should('not.be.empty')
         cy.wrap($item).find(inventoryPage.itemDescriptions).should('not.be.empty')
         cy.wrap($item).find(inventoryPage.itemPrices).should('not.be.empty')
@@ -24,7 +24,7 @@ testUsers.forEach((user) => {
             .text()
             .trim()
           const imageSrc = Cypress.$($item)
-            .find('img.inventory_item_img')
+            .find(inventoryPage.itemImage)
             .attr('src')
           const expectedPartial = products[productName]
           expect(expectedPartial, `Unmapped product: ${productName}`).to.exist

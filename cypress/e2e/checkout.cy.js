@@ -22,7 +22,9 @@ testUsers.forEach((user) => {
 
       it('Should display error on empty form submission', () => {
         checkoutPage.submitForm()
-        cy.get(checkoutPage.errorMessage).should('be.visible')
+        cy.get(checkoutPage.errorMessage)
+          .should('be.visible')
+          .and('contain', 'First Name is required')
       })
 
       it('Should display error when first name is missing', () => {
@@ -31,7 +33,9 @@ testUsers.forEach((user) => {
           cy.get(checkoutPage.postalCodeInput).type(data.valid.postalCode)
         })
         checkoutPage.submitForm()
-        cy.get(checkoutPage.errorMessage).should('be.visible')
+        cy.get(checkoutPage.errorMessage)
+          .should('be.visible')
+          .and('contain', 'First Name is required')
       })
 
       it('Should display error when last name is missing', () => {
@@ -40,7 +44,9 @@ testUsers.forEach((user) => {
           cy.get(checkoutPage.postalCodeInput).type(data.valid.postalCode)
         })
         checkoutPage.submitForm()
-        cy.get(checkoutPage.errorMessage).should('be.visible')
+        cy.get(checkoutPage.errorMessage)
+          .should('be.visible')
+          .and('contain', 'Last Name is required')
       })
 
       it('Should display error when postal code is missing', () => {
@@ -49,7 +55,9 @@ testUsers.forEach((user) => {
           cy.get(checkoutPage.lastNameInput).type(data.valid.lastName)
         })
         checkoutPage.submitForm()
-        cy.get(checkoutPage.errorMessage).should('be.visible')
+        cy.get(checkoutPage.errorMessage)
+          .should('be.visible')
+          .and('contain', 'Postal Code is required')
       })
 
       it('Should accept special characters in fields', () => {

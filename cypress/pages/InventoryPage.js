@@ -17,6 +17,10 @@ class InventoryPage {
     return '[data-test="inventory-item-price"]'
   }
 
+  get itemImage() {
+    return 'img.inventory_item_img'
+  }
+
   get sortDropdown() {
     return '[data-test="product-sort-container"]'
   }
