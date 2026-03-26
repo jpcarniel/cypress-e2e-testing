@@ -1,5 +1,7 @@
 # Cypress E2E Testing
 
+![CI](https://github.com/jpcarniel/cypress-e2e-testing/actions/workflows/cypress.yml/badge.svg)
+
 Automação de testes end-to-end para o [Sauce Demo](https://www.saucedemo.com) usando Cypress.
 
 ## O que é testado
