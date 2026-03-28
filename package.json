@@ -1,5 +1,5 @@
 {
-  "name": "meu-projeto-cypress",
+  "name": "cypress-e2e-testing",
   "version": "1.0.0",
   "description": "E2E test automation for Sauce Demo using Cypress",
   "scripts": {
