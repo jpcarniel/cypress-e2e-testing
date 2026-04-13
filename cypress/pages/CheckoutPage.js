@@ -77,9 +77,9 @@ class CheckoutPage {
   }
 
   fillForm(firstName, lastName, postalCode) {
-    cy.get(this.firstNameInput).type(firstName)
-    cy.get(this.lastNameInput).type(lastName)
-    cy.get(this.postalCodeInput).type(postalCode)
+    cy.get(this.firstNameInput).clear().type(firstName)
+    cy.get(this.lastNameInput).clear().type(lastName)
+    cy.get(this.postalCodeInput).clear().type(postalCode)
   }
 
   submitForm() {
