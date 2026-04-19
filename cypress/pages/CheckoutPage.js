@@ -1,7 +1,6 @@
 const nav = require('./NavComponent')
 
 class CheckoutPage {
-  // Step One
   get firstNameInput() {
     return '[data-test="firstName"]'
   }
@@ -26,7 +25,6 @@ class CheckoutPage {
     return '[data-test="error"]'
   }
 
-  // Step Two
   get cartItems() {
     return '.cart_item'
   }
@@ -59,7 +57,6 @@ class CheckoutPage {
     return '[data-test="finish"]'
   }
 
-  // Complete
   get completeHeader() {
     return '.complete-header'
   }

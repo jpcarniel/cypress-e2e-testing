@@ -3,10 +3,6 @@ const { testUsers } = require('../support/users')
 
 testUsers.forEach((user) => {
   describe(`Checkout - ${user}`, () => {
-    // =====================
-    // /checkout-step-one
-    // =====================
-
     describe('/checkout-step-one', () => {
       beforeEach(() => {
         cy.login(user)
@@ -99,10 +95,6 @@ testUsers.forEach((user) => {
       })
     })
 
-    // =====================
-    // /checkout-step-two
-    // =====================
-
     describe('/checkout-step-two', () => {
       beforeEach(() => {
         cy.login(user)
@@ -141,10 +133,6 @@ testUsers.forEach((user) => {
         cy.url().should('include', '/inventory')
       })
     })
-
-    // =====================
-    // /checkout-complete
-    // =====================
 
     describe('/checkout-complete', () => {
       beforeEach(() => {
